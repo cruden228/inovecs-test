@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>TEST</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<main class="main">
+		<div class="container-form-join main__container-form-join">
+			<section class="info-joining container-form-join__info">
+				<h1>
+					<span class="info-joining__title">We teach you.</span>
+					<span class="info-joining__title">We fund you.</span>
+				</h1>
+				<h2 class="info-joining__subtitle">You keep most of the profits</h2>
+				<p class="info-joining__text">We have educated more than</p>
+				<p class="info-joining__allotment">16,000 traders worldwide</p>
+				<p class="info-joining__text">since 2004 & completely funded their trading accounts. You can be next</p>
+				<div class="info-joining__photo"></div>
+			</section>
+			<form id="form-join" class="form-join container-form-join__form">
+				<div class="form-join__logo"><img class="form-join__img" src="imgs/logo.png" alt="logo"></div>
+				<h3 class="form-join__title">You’re one step away from joining our elite trading team</h3>
+				<p class="form-join__text">Just fill in the fields below with your personal data</p>
+
+				<input class="form-join__input icon-user" type="text" name="firstName" autocomplete="off" placeholder="First Name"/>
+
+				<input class="form-join__input icon-user" type="text" name="lastName" autocomplete="off" placeholder="Last Name"/>
+
+				<input class="form-join__input icon-email" type="text"  name="email"
+				autocomplete="off" placeholder="Email"/>
+
+				<div id="select-join" class="select-join form-join__select icon-pin" >
+
+					<div class="select-join__selected">Romania</div>
+
+					<ul class="select-join__list">
+						<li class="select-join__item">Romania</li>
+						<li class="select-join__item">Ukraine</li>
+					</ul>
+
+				</div>
+
+				<div class="input-call form-join__input-call">
+					<input class="input-call__input icon-phone" type="text"
+					name="phonePrefix" autocomplete="off" value="+40000">
+					<input class="input-call__input" autocomplete="off" type="text" name="phoneNumber" placeholder="Phone">
+				</div>
+				
+				<button class="form-join__button" href="#popup-join">Try a 14-day trial period</button>
+				<p class="form-join__text">You will be contacted shortly by one of our trading mentors.</p>
+			</form>
+		</div>
+
+		<section class="advantages main__section">
+			<h2 class="advantages__title">What we offer</h2>
+			<div class="advantages__block">
+				<div class="advantages__article">
+					<div class="advantages__img">
+						<img src="imgs/cart-1.png" alt="advantage">
+					</div>
+					<h4 class="advantages__caption">Personalized trading education</h4>
+					<p class="advantages__text"><strong>Meir Barak</strong> and his team of highly skilled financial experts provide you with 1-on-1 personal mentorship in the art of day trading</p>
+				</div>
+				<div class="advantages__article">
+					<div class="advantages__img">
+						<img src="imgs/cart-2.png" alt="advantage">
+					</div>
+					<h4 class="advantages__caption">A Pro Funded Account</h4>
+					<p class="advantages__text">Upon completion of a Self-Study course and a 14-day demo practice you will receive a funded trading account of up to $240,000.</p>
+					<p class="advantages__text">Any losses are absorbed by Tradenet and you keep 80% to 95% of the profits you earn from trading </p>
+				</div>
+				<div class="advantages__article">
+					<div class="advantages__img">
+						<img src="imgs/cart-3.png" alt="advantage">
+					</div>
+					<h4 class="advantages__caption">Stellar trading academy</h4>
+					<ul class="advantages__list">
+						<li class="advantages__item">Get access to extensive training materials, Demo Account, live practice sessions & much more, everything designed for your skill level</li>
+						<li class="advantages__item">All with as low as $500!</li>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="start-now main__section">
+			<h2 class="start-now__title">Allow us to fund you</h2>
+			<a href="#" class="start-now__link">Start Now</a>
+		</section>
+
+	</main>
+	<footer class="footer">
+		<p class="footer__text">Tradenet is a Day Trading Training school that offers day and swing trading courses in stocks, CFDs, options, futures and Forex. At Tradenet we specialize in day trading courses that are suitable for those familiar with day trading, or beginners with no prior knowledge or experience with day trading.</p>
+		<p class="footer__text">We offer three different learning options; Self-Study online course, online courses in the comfort of your own home or an exclusive course, one-on-one with an experienced day trading mentor at your own pace. We also offer online live day Trading Room and the potential for funded sub-accounts for our students. Most of our services are offered in several languages, including: Spanish, German, French, Russian, Hungarian, Italian, Arabic and more.</p>
+	</footer>
+
+	<div id="popup-join" class="popup-window-join">
+	    <div class="popup-window-join__container">
+	        <h2 class="popup-window-join__title">Notifications</h2>
+	        <div class="popup-window-join__content">
+	            
+	        </div>
+	        <a class="popup-window-join__close">Close</a>
+	    </div>
+	</div>
+
+	<script
+		src="http://code.jquery.com/jquery-3.4.0.min.js"
+		integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
