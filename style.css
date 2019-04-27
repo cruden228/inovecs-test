@@ -351,7 +351,8 @@ h4 {
 
 .popup-window-join__close:hover {
   background: #fa534a;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 .popup-window-join__content {
   max-height: 30%;
