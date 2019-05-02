@@ -146,6 +146,7 @@ h4
 	width: 100%
 	list-style-type: none
 	box-sizing: border-box
+	z-index: 1
 .select-join__list-open
 	display: block
 	animation: openSelect .5s
@@ -330,8 +331,37 @@ h4
 .popup-window-join__content 
 	max-height: 30%
 	overflow: auto
-
-
+.popup-window-join__error
+	padding: 5px 30px
+	position: relative
+	&::before,
+	&::after
+		content: ""
+		position: absolute
+		top: 10px
+		left: 10px
+		width: 3px
+		height: 15px
+		border-radius: 50%
+		background: red
+		transform: rotate(40deg)
+	&::after
+		transform: rotate(-40deg)
+.popup-window-join__success
+	padding: 5px 30px
+	position: relative
+	&::before
+		content: ""
+		width: 7px
+		height: 12px
+		position: absolute
+		top: 5px
+		left: 10px
+		border-top: 2px solid transparent
+		border-left: 2px solid transparent
+		border-right: 2px solid green
+		border-bottom: 2px solid green
+		transform: rotate(45deg)
 
 
 

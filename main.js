@@ -27,43 +27,64 @@ function validateEmail(email) {
   return regex.test(email);
 }
 
-function writeSuccess (success){
-	const popupJoin = document.getElementById("popup-join");
-	popupJoin.classList.add("popup-window-join_open");
-	const popupContent = popupJoin.getElementsByClassName("popup-window-join__content")[0];
-	const popupElemClose = popupJoin.getElementsByClassName("popup-window-join__close")[0];
-	popupContent.innerHTML = success;
-
-	function popupClose (){
-		popupJoin.classList.remove("popup-window-join_open");
-		popupElemClose.removeEventListener("click", popupClose , false)
-	}
-
-	popupElemClose.addEventListener("click", popupClose , false)
+function writeError (error){
+	const errorElem = document.createElement("p");
+	errorElem.innerHTML = error;
+	errorElem.classList = 'popup-window-join__error';
+	return errorElem
 }
+function writeSuccess (){
+	const successElem = document.createElement("p");
+	successElem.innerHTML = "Thank! Your message has been successfully sent.";
+	successElem.classList = 'popup-window-join__success';
+	return successElem
+}
+
 
 formJoin.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const inputs = event.target.getElementsByTagName("input");
-	let fail = "success";
+	const popupJoin = document.getElementById("popup-join");
+	const popupContent = popupJoin.getElementsByClassName("popup-window-join__content")[0];
+	const popupElemClose = popupJoin.getElementsByClassName("popup-window-join__close")[0];
+
+	let errors = [];
 	forEach(inputs, (input) => {
-		if(input.getAttribute("name") === "firstName" || 
-			input.getAttribute("name") === "lastName") {
-			if(input.value.length < 3) fail = "Incorrect first name or last name!";
+		if(input.getAttribute("name") === "firstName"){
+			if(input.value.length < 3) errors.push("Incorrect first name!");
 		
+		}else if(input.getAttribute("name") === "lastName"){
+			if(input.value.length < 3) errors.push("Incorrect last name!");
+
 		}else if(input.getAttribute("name") === "email"){
-			if(!validateEmail(input.value)) fail = "Incorrect data mail!";
+			if(!validateEmail(input.value)) errors.push("Incorrect data mail!");
 		
 		}else if(input.getAttribute("name") === "phonePrefix"){
 			var re = /^\+[0-9 -]*$/;
-			if(!re.test(input.value)) fail = "Incorrect prefix phone!";
+			if(!re.test(input.value)) errors.push("Incorrect prefix phone!");
 
 		}else if(input.getAttribute("name") === "phoneNumber"){
 			if(input.value.length < 7 ||
-				/\D/.test(input.value)) fail = "Incorrect data phone!";
+				/\D/.test(input.value)) errors.push("Incorrect data phone!");
 
 		}
-
 	});
-	writeSuccess(fail);
+
+	if(errors.length == 0) {
+		popupContent.appendChild(writeSuccess()); 
+	}else{
+		errors.forEach((error, index) => {
+			popupContent.appendChild(writeError(error));
+		});
+	}
+
+	popupJoin.classList.add("popup-window-join_open");
+	
+	popupElemClose.addEventListener("click", popupClose , false)
+
+	function popupClose (){
+		popupJoin.classList.remove("popup-window-join_open");
+		popupContent.innerHTML = null;
+		popupElemClose.removeEventListener("click", popupClose , false)
+	}
 }, false)
